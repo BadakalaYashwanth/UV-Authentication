@@ -16,8 +16,9 @@ app.get("/ping", (req, res) => {
 app.use(bodyparser.json())
 //CORS --> Cross Origin Resource Sharing, it is used to allow the frontend to access the backend
 const allowedOrigins = [
-    process.env.FRONTEND_URL,           // Production frontend (e.g. Netlify URL)
-    'http://localhost:3000',             // Local development
+    process.env.FRONTEND_URL,             // Production frontend (e.g. Netlify URL)
+    'https://uvauth.netlify.app',         // Hardcoded Netlify URL Fallback
+    'http://localhost:3000',              // Local development
 ].filter(Boolean);
 
 app.use(cors({
