@@ -61,36 +61,36 @@ function Login() {
             </header>
             <main className="auth-main">
                 <div className='container'>
-                <h1>Login</h1>
-                <form onSubmit={handleLogin}>
-                    <div>
-                        <label htmlFor='email'>Email</label>
-                        <input
-                            onChange={handleChange}
-                            type='email'
-                            name='email'
-                            placeholder='Enter your email'
-                            value={loginInfo.email}
-                            autoFocus
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='password'>Password</label>
-                        <input
-                            onChange={handleChange}
-                            type='password'
-                            name='password'
-                            placeholder='Enter your password'
-                            value={loginInfo.password}
-                        />
-                    </div>
-                    <button type='submit'>Login</button>
-                    <span>Don't have an account ?
-                        <Link to="/signup"> Signup</Link>
-                    </span>
-                </form>
-                <ToastContainer />
-            </div>
+                    <h1>Login</h1>
+                    <form onSubmit={handleLogin}>
+                        <div>
+                            <label htmlFor='email'>Email</label>
+                            <input
+                                onChange={handleChange}
+                                type='email'
+                                name='email'
+                                placeholder='Enter your email'
+                                value={loginInfo.email}
+                                autoFocus
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='password'>Password</label>
+                            <input
+                                onChange={handleChange}
+                                type='password'
+                                name='password'
+                                placeholder='Enter your password'
+                                value={loginInfo.password}
+                            />
+                        </div>
+                        <button type='submit'>Login</button>
+                        <span>Don't have an account ?
+                            <Link to="/signup"> Signup</Link>
+                        </span>
+                    </form>
+                    <ToastContainer />
+                </div>
             </main>
         </div>
     )
