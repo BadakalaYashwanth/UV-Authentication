@@ -16,7 +16,7 @@ function Signup() {
 
     // Validation Regex Rules
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9\s])[\S]{8,}$/;
 
     const validateEmail = (email) => {
         if (!email) return "Email is required.";
@@ -85,9 +85,33 @@ function Signup() {
             const { success, message, error } = result;
             if (success) {
                 handleSuccess(message);
-                setTimeout(() => {
-                    navigate('/login')
-                }, 1000)
+                // Auto-login: call login endpoint with the same credentials
+                try {
+                    const loginUrl = `${process.env.REACT_APP_API_URL || 'http://localhost:8080'}/auth/login`;
+                    const loginResponse = await fetch(loginUrl, {
+                        method: "POST",
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email, password })
+                    });
+                    const loginResult = await loginResponse.json();
+                    if (loginResult.success) {
+                        localStorage.setItem('token', loginResult.jwtToken);
+                        localStorage.setItem('loggedInUser', loginResult.name);
+                        setTimeout(() => {
+                            navigate('/home');
+                        }, 1000);
+                    } else {
+                        // Fallback: if auto-login fails, redirect to login page
+                        setTimeout(() => {
+                            navigate('/login');
+                        }, 1000);
+                    }
+                } catch (loginErr) {
+                    // Fallback: if auto-login fails, redirect to login page
+                    setTimeout(() => {
+                        navigate('/login');
+                    }, 1000);
+                }
             } else if (error) {
                 const details = error?.details[0].message;
                 handleError(details);

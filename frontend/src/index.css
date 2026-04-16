@@ -10,7 +10,7 @@
 
 html,
 body {
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -18,11 +18,18 @@ body {
   background: #000000;
   color: #FFFFFF;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   line-height: normal;
+}
+
+/* Let the dashboard (home page) take full width and break out of centering */
+body:has(.home-page) {
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 .brand-logo {
@@ -46,7 +53,7 @@ body {
   border: 1.75px solid #000055;
 }
 
-.container > h1 {
+.container>h1 {
   margin-bottom: 18px;
   font-size: 46px;
   font-weight: 500;
@@ -89,8 +96,7 @@ body {
   color: #757575;
 }
 
-.container button,
-.logout-btn {
+.container button {
   margin-top: 6px;
   width: 100%;
   background: transparent;
@@ -106,8 +112,7 @@ body {
   transition: background 0.2s, color 0.2s;
 }
 
-.container button:hover,
-.logout-btn:hover {
+.container button:hover {
   background: #FFFFFF;
   color: #000000;
 }
@@ -128,11 +133,13 @@ body {
 @media screen and (max-width: 600px) {
   body {
     padding: 20px;
-    align-items: flex-start; /* Move container up on small screens to avoid keyboard overlap */
+    align-items: flex-start;
+    /* Move container up on small screens to avoid keyboard overlap */
   }
 
   .brand-logo {
-    position: static; /* Move logo into the natural document flow */
+    position: static;
+    /* Move logo into the natural document flow */
     margin: 20px auto 40px;
     text-align: center;
   }
@@ -142,7 +149,7 @@ body {
     margin: 0 auto;
   }
 
-  .container > h1 {
+  .container>h1 {
     font-size: 36px;
     margin-bottom: 14px;
   }
@@ -155,8 +162,7 @@ body {
     font-size: 16px;
   }
 
-  .container button,
-  .logout-btn {
+  .container button {
     font-size: 24px;
     padding: 8px 14px;
   }
@@ -194,10 +200,10 @@ body {
 
 /* Autofill Overrides */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 1000px #000021 inset !important;
-    -webkit-text-fill-color: #FFFFFF !important;
-    transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0 1000px #000021 inset !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
