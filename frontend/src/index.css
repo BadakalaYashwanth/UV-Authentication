@@ -32,143 +32,12 @@ body:has(.home-page) {
   align-items: stretch;
 }
 
-.brand-logo {
-  position: absolute;
-  top: 32px;
-  left: 32px;
-}
-
-.brand-logo img {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
-}
-
-.container {
-  background-color: #000021;
-  padding: 28px 36px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 460px;
-  border: 1.75px solid #000055;
-}
-
-.container>h1 {
-  margin-bottom: 18px;
-  font-size: 46px;
-  font-weight: 500;
-  color: #FFFFFF;
-  letter-spacing: -0.75px;
-}
-
-.container form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.container div {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.container label {
-  font-size: 20px;
-  color: #EEEEEE;
-}
-
-.container input {
-  width: 100%;
-  font-size: 18px;
-  padding: 8px 4px 10px;
-  background: transparent;
-  color: #FFFFFF;
-  border: none;
-  outline: none;
-  border-bottom: 1.75px solid #000055;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-}
-
-.container input::placeholder {
-  font-size: 17px;
-  color: #757575;
-}
-
-.container button {
-  margin-top: 6px;
-  width: 100%;
-  background: transparent;
-  border: 2px solid #FFFFFF;
-  font-size: 34px;
-  color: #FFFFFF;
-  border-radius: 145px;
-  padding: 10px 16px;
-  cursor: pointer;
-  margin: 10px 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  transition: background 0.2s, color 0.2s;
-}
-
-.container button:hover {
-  background: #FFFFFF;
-  color: #000000;
-}
-
-.container span {
-  margin-top: 2px;
-  font-size: 20px;
-  text-align: center;
-  color: #EEEEEE;
-}
-
-.container a {
-  color: #0000EE;
-  text-decoration: none;
-}
 
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 600px) {
   body {
-    padding: 20px;
+    padding: 0;
     align-items: flex-start;
-    /* Move container up on small screens to avoid keyboard overlap */
-  }
-
-  .brand-logo {
-    position: static;
-    /* Move logo into the natural document flow */
-    margin: 20px auto 40px;
-    text-align: center;
-  }
-
-  .container {
-    padding: 24px 20px;
-    margin: 0 auto;
-  }
-
-  .container>h1 {
-    font-size: 36px;
-    margin-bottom: 14px;
-  }
-
-  .container label {
-    font-size: 18px;
-  }
-
-  .container input {
-    font-size: 16px;
-  }
-
-  .container button {
-    font-size: 24px;
-    padding: 8px 14px;
-  }
-
-  .container span {
-    font-size: 16px;
   }
 }
 
@@ -188,14 +57,6 @@ body:has(.home-page) {
 
 .helper-text.success {
   color: #00E676;
-}
-
-.container input.input-error {
-  border-bottom-color: #ff4d4d;
-}
-
-.container input.input-success {
-  border-bottom-color: #00E676;
 }
 
 /* Autofill Overrides */

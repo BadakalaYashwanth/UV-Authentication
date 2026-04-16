@@ -1,0 +1,132 @@
+/* AuthLayout.css */
+.auth-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.auth-header {
+    width: 100%;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: flex-start; /* Strictly Left Aligned */
+    align-items: center;
+}
+
+.brand-logo-fixed img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+.auth-main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Pushes content down properly */
+    width: 100%;
+    padding: 20px;
+}
+
+.auth-form-card {
+    background-color: #000021;
+    padding: clamp(24px, 5vw, 36px);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 460px;
+    border: 1.75px solid #000055;
+    margin: 0 auto; /* Force structural center relative to self width constraint */
+}
+
+.auth-form-card > h1 {
+    margin-bottom: 18px;
+    font-size: clamp(36px, 6vw, 46px);
+    font-weight: 500;
+    color: #FFFFFF;
+    letter-spacing: -0.75px;
+}
+
+.auth-form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-form-card div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auth-form-card label {
+    font-size: clamp(18px, 4vw, 20px);
+    color: #EEEEEE;
+}
+
+.auth-form-card input {
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 4px 10px;
+    background: transparent;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    border-bottom: 1.75px solid #000055;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.auth-form-card input::placeholder {
+    font-size: 17px;
+    color: #757575;
+}
+
+.auth-form-card button {
+    margin-top: 6px;
+    width: 100%;
+    background: transparent;
+    border: 2px solid #FFFFFF;
+    font-size: clamp(24px, 5vw, 34px);
+    color: #FFFFFF;
+    border-radius: 145px;
+    padding: 10px 16px;
+    cursor: pointer;
+    margin: 10px 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.auth-form-card button:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+.auth-form-card span {
+    margin-top: 2px;
+    font-size: clamp(16px, 4vw, 20px);
+    text-align: center;
+    color: #EEEEEE;
+}
+
+.auth-form-card a {
+    color: #0000EE;
+    text-decoration: none;
+}
+
+/* Validation Feedback Styles inside Auth Form */
+.auth-form-card input.input-error {
+    border-bottom-color: #ff4d4d;
+}
+
+.auth-form-card input.input-success {
+    border-bottom-color: #00E676;
+}
+
+/* Responsive Fixes */
+@media screen and (max-width: 600px) {
+    .auth-header {
+        padding: 16px 20px; /* Logo stays top-left on mobile */
+    }
+}

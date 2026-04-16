@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
+import AuthLayout from '../components/AuthLayout';
 
 function Signup() {
 
@@ -124,12 +125,8 @@ function Signup() {
         }
     }
     return (
-        <>
-            <div className='brand-logo'>
-                <img src="/images/Uvnetware.png" alt="NetWare Logo" />
-            </div>
-            <div className='container'>
-                <h1>Signup</h1>
+        <AuthLayout>
+            <h1>Signup</h1>
                 <form onSubmit={handleSignup}>
                     <div>
                         <label htmlFor='name'>Name</label>
@@ -186,8 +183,7 @@ function Signup() {
                     </span>
                 </form>
                 <ToastContainer />
-            </div>
-        </>
+        </AuthLayout>
     )
 }
 
