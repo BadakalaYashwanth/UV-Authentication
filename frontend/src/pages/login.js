@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
-import AuthLayout from '../components/AuthLayout';
 
 function Login() {
 
@@ -56,9 +55,14 @@ function Login() {
         }
     }
     return (
-        <AuthLayout>
-            <h1>Login</h1>
-            <form onSubmit={handleLogin}>
+        <div className="auth-page-wrapper">
+            <header className="auth-header">
+                <img src="/images/Uvnetware.png" alt="NetWare Logo" className="brand-logo" />
+            </header>
+            <main className="auth-main">
+                <div className='container'>
+                <h1>Login</h1>
+                <form onSubmit={handleLogin}>
                     <div>
                         <label htmlFor='email'>Email</label>
                         <input
@@ -86,7 +90,9 @@ function Login() {
                     </span>
                 </form>
                 <ToastContainer />
-        </AuthLayout>
+            </div>
+            </main>
+        </div>
     )
 }
 
